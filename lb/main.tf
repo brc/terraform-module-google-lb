@@ -51,3 +51,10 @@ resource "google_compute_backend_service" "default" {
     }
   }
 }
+
+/* Set up URL map
+ */
+resource "google_compute_url_map" "default" {
+  name            = var.lb_name
+  default_service = google_compute_backend_service.default.self_link
+}

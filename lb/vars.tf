@@ -1,8 +1,3 @@
-# variable "lb_name" {
-#   description = "Name of external load balancer"
-#   type        = string
-# }
-
 # variable "lb_frontend_name" {
 #   description = "Name of front-end"
 #   type        = string
@@ -12,6 +7,11 @@
 #   description = "Name of HTTPS target proxy"
 #   type        = string
 # }
+
+variable "lb_name" {
+  description = "Name of external load balancer"
+  type        = string
+}
 
 variable "lb_addr_name" {
   description = "Name of external IP address"
