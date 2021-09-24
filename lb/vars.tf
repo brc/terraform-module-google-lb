@@ -3,11 +3,6 @@
 #   type        = string
 # }
 
-# variable "lb_backend_name" {
-#   description = "Name of back-end service"
-#   type        = string
-# }
-
 # variable "lb_frontend_name" {
 #   description = "Name of front-end"
 #   type        = string
@@ -40,4 +35,9 @@ variable "lb_negs_list" {
     region  = string
     run_svc = string
   }))
+}
+
+variable "lb_backend_name" {
+  description = "Name of back-end service"
+  type        = string
 }
