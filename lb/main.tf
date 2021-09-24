@@ -66,3 +66,12 @@ resource "google_compute_target_https_proxy" "default" {
   url_map          = google_compute_url_map.default.id
   ssl_certificates = [google_compute_ssl_certificate.default.id]
 }
+
+/* Set up forwarding rule
+ */
+resource "google_compute_global_forwarding_rule" "https" {
+  name       = var.lb_frontend_name
+  target     = google_compute_target_https_proxy.default.id
+  ip_address = google_compute_global_address.default.id
+  port_range = "443"
+}
