@@ -18,7 +18,7 @@ variable "lb_tls_secret" {
   type        = string
 }
 
-variable "lb_negs_list" {
+variable "lb_neg_list" {
   description = "List of NEG objects to be used in back-end"
   type        = list(object({
     name    = string
