@@ -18,10 +18,20 @@
 #   type        = string
 # }
 
-# variable "lb_tls_cert_name" {
-#   description = "Name of TLS certificate resource"
-#   type        = string
-# }
+variable "lb_addr_name" {
+  description = "Name of external IP address"
+  type        = string
+}
+
+variable "lb_tls_cert_name" {
+  description = "Name of TLS certificate resource"
+  type        = string
+}
+
+variable "lb_tls_secret" {
+  description = "Name of secret which holds TLS private key"
+  type        = string
+}
 
 variable "lb_negs_list" {
   description = "List of NEG objects to be used in back-end"
@@ -30,9 +40,4 @@ variable "lb_negs_list" {
     region  = string
     run_svc = string
   }))
-}
-
-variable "lb_addr_name" {
-  description = "Name of external IP address"
-  type        = string
 }
