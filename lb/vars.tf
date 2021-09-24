@@ -3,11 +3,6 @@
 #   type        = string
 # }
 
-# variable "lb_proxy_name" {
-#   description = "Name of HTTPS target proxy"
-#   type        = string
-# }
-
 variable "lb_name" {
   description = "Name of external load balancer"
   type        = string
@@ -39,5 +34,10 @@ variable "lb_negs_list" {
 
 variable "lb_backend_name" {
   description = "Name of back-end service"
+  type        = string
+}
+
+variable "lb_proxy_name" {
+  description = "Name of HTTPS target proxy"
   type        = string
 }

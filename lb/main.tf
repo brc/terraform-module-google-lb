@@ -58,3 +58,11 @@ resource "google_compute_url_map" "default" {
   name            = var.lb_name
   default_service = google_compute_backend_service.default.self_link
 }
+
+/* Set up target proxy
+ */
+resource "google_compute_target_https_proxy" "default" {
+  name             = var.lb_proxy_name
+  url_map          = google_compute_url_map.default.id
+  ssl_certificates = [google_compute_ssl_certificate.default.id]
+}
