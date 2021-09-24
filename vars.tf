@@ -32,3 +32,7 @@ variable "lb_negs_list" {
   }))
 }
 
+variable "lb_addr_name" {
+  description = "Name of external IP address"
+  type        = string
+}

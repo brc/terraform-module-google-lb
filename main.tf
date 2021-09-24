@@ -7,3 +7,7 @@ resource "google_compute_region_network_endpoint_group" "neg" {
     service = each.value.run_svc
   }
 }
+
+resource "google_compute_global_address" "default" {
+  name = var.lb_addr_name
+}
